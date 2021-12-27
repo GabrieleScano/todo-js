@@ -1,10 +1,10 @@
 export class Todo {
 
-  constructor(task) {
-    this.task = task;
+  constructor(title) {
+    this.title = title;
 
     this.id = new Date().getTime();
-    this.completed = false;
+    this.completed = true;
     this.createdAt = new Date();
   }
 }
