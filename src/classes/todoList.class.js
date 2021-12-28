@@ -1,46 +1,61 @@
 export class TodoList {
+
   constructor() {
-    this.todos = [];
+    this.getLocalStorage();
   }
 
   addTodo(task) {
-    // const todo = new Todo(task);
     this.todos.push(task);
-    // return todo;
+
+    this.setLocalStorage();
   }
 
   removeTodo(id) {
     this.todos = this.todos.filter(todo => todo.id != id);
-    console.log(this.todos);
+    this.setLocalStorage();
   }
 
   toggleTodo(id) {
-    for(const todo of this.todos) {
-      if(todo.id == id) {
-
-    todo.completed = !todo.completed;
+    for (const todo of this.todos) {
+      if (todo.id == id) {
+        todo.completed = !todo.completed;
+        this.setLocalStorage();
+        break;
+      }
+    }
   }
-  }}
-
-
-//   toggleAll() {
-//     const areAllMarked = this.todos.every(todo => todo.completed);
-//     this.todos.forEach(todo => todo.completed = !areAllMarked);
-//   }
 
   clearCompleted() {
     this.todos = this.todos.filter(todo => !todo.completed);
+    this.setLocalStorage();
   }
 
-//   getActiveTodos() {
-//     return this.todos.filter(todo => !todo.completed);
-//   }
+  setLocalStorage() {
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
 
-//   getCompletedTodos() {
-//     return this.todos.filter(todo => todo.completed);
-//   }
+  getLocalStorage() {
+    this.todos = localStorage.getItem('todoList') ? JSON.parse(localStorage.getItem('todoList')) : [];
+  }
 
-//   getTodos() {
-//     return this.todos;
-//   }
+
+
+
+  //   toggleAll() {
+  //     const areAllMarked = this.todos.every(todo => todo.completed);
+  //     this.todos.forEach(todo => todo.completed = !areAllMarked);
+  //   }
+
+
+  //   getActiveTodos() {
+  //     return this.todos.filter(todo => !todo.completed);
+  //   }
+
+  //   getCompletedTodos() {
+  //     return this.todos.filter(todo => todo.completed);
+  //   }
+
+  //   getTodos() {
+  //     return this.todos;
+  //   }
 }
