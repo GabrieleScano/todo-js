@@ -3,9 +3,9 @@ export class TodoList {
     this.todos = [];
   }
 
-  addTodo(title) {
+  addTodo(task) {
     // const todo = new Todo(task);
-    this.todos.push(title);
+    this.todos.push(task);
     // return todo;
   }
 
