@@ -8,11 +8,8 @@ export class Todo {
     todo.createdAt = createdAt;
 
     return todo;
-
   }
   
-
-
   constructor(task) {
     this.task = task;
 

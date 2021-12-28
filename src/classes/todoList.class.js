@@ -42,23 +42,4 @@ export class TodoList {
                  : [];
     this.todos = this.todos.map(todo => {Todo.fromJson(todo)});
   }
-
-
-  //   toggleAll() {
-  //     const areAllMarked = this.todos.every(todo => todo.completed);
-  //     this.todos.forEach(todo => todo.completed = !areAllMarked);
-  //   }
-
-
-  //   getActiveTodos() {
-  //     return this.todos.filter(todo => !todo.completed);
-  //   }
-
-  //   getCompletedTodos() {
-  //     return this.todos.filter(todo => todo.completed);
-  //   }
-
-  //   getTodos() {
-  //     return this.todos;
-  //   }
 }
