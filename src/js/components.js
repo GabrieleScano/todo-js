@@ -31,8 +31,22 @@ txtInput.addEventListener('keyup', (e) => {
         const newTodo = new Todo(task);
         todoList.addTodo(newTodo);
         createTodoHtml(newTodo);
-        
-    txtInput.value = '';
+
+        txtInput.value = '';
     }
-}  
+});
+
+divTodoList.addEventListener('click', (e) => {
+    const elementName = e.target.localName;
+    const elementTodo = e.target.parentElement.parentElement;
+    const todoId = elementTodo.getAttribute('data-id');
+
+    if (elementName === 'input') {
+        todoList.toggleTodo(todoId);
+        elementTodo.classList.toggle('completed');
+    } else if (elementName === 'button') {
+        todoList.removeTodo(todoId);
+        elementTodo.remove();
+    }
+}
 );

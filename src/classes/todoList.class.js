@@ -10,13 +10,18 @@ export class TodoList {
   }
 
   removeTodo(id) {
-    // this.todos = this.todos.filter(todo => todo.id !== id);
+    this.todos = this.todos.filter(todo => todo.id != id);
+    console.log(this.todos);
   }
 
   toggleTodo(id) {
-    // const todo = this.todos.find(todo => todo.id === id);
-    // todo.completed = !todo.completed;
+    for(const todo of this.todos) {
+      if(todo.id == id) {
+
+    todo.completed = !todo.completed;
   }
+  }}
+
 
 //   toggleAll() {
 //     const areAllMarked = this.todos.every(todo => todo.completed);
