@@ -29,7 +29,7 @@ export class TodoList {
 //   }
 
   clearCompleted() {
-    // this.todos = this.todos.filter(todo => !todo.completed);
+    this.todos = this.todos.filter(todo => !todo.completed);
   }
 
 //   getActiveTodos() {
