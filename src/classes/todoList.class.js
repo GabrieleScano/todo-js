@@ -37,9 +37,9 @@ export class TodoList {
   }
 
   getLocalStorage() {
-    this.todos = localStorage.getItem('todoList') ?
-                 JSON.parse(localStorage.getItem('todoList')) 
+    this.todos = localStorage.getItem('todos') ?
+                 JSON.parse(localStorage.getItem('todos')) 
                  : [];
-    this.todos = this.todos.map(todo => {Todo.fromJson(todo)});
+    this.todos = this.todos.map(Todo.fromJson);
   }
 }
