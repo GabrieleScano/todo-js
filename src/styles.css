@@ -258,6 +258,8 @@ body {
 }
 
 .footer {
+	display: flex;
+	flex-direction: row;
 	padding: 10px 15px;
 	height: 20px;
 	text-align: center;
@@ -293,7 +295,6 @@ body {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	position: absolute;
 	right: 0;
 	left: 0;
 }
@@ -306,30 +307,21 @@ body {
 	color: inherit;
 	margin: 3px;
 	padding: 3px 7px;
+
 	text-decoration: none;
 	border: 1px solid transparent;
-	border-radius: 3px;
 }
 
 .filters li a:hover {
-	border-color: rgba(175, 47, 47, 0.1);
+	background-color: #3fb89a0b;
 }
 
 .filters li a.selected {
-	border-color: #3fb89a;
-}
-
-.clear-completed,
-html .clear-completed:active {
-	float: right;
-	position: relative;
-	line-height: 20px;
-	text-decoration: none;
-	cursor: pointer;
+	border-bottom-color: #3fb89a;
 }
 
 .clear-completed:hover {
-	text-decoration: underline;
+	color: red;
 }
 
 .info {
