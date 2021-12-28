@@ -74,7 +74,7 @@ body {
 	font-size: 80px;
 	font-weight: 200;
 	text-align: center;
-	color: #b83f45;
+	color: #3fb89a;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
@@ -266,7 +266,7 @@ body {
 }
 
 .footer:before {
-	content: '';
+	
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -316,7 +316,7 @@ body {
 }
 
 .filters li a.selected {
-	border-color: rgba(175, 47, 47, 0.2);
+	border-color: #3fb89a;
 }
 
 .clear-completed,

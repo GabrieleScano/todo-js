@@ -1,12 +1,11 @@
 import { todoList } from "..";
-import { Todo, TodoList } from "../classes";
+import { Todo } from "../classes";
 
 const divTodoList = document.querySelector('.todo-list');
 const txtInput = document.querySelector('.new-todo');
 const btnClearCompleted = document.querySelector('.clear-completed');
 const ulFilters = document.querySelector('.filters');
 const aFilters = document.querySelectorAll('.filter');
-
 
 export const createTodoHtml = (todo) => {
 
@@ -31,7 +30,6 @@ export const createTodoHtml = (todo) => {
 txtInput.addEventListener('keyup', (e) => {
     if (e.keyCode === 13 && txtInput.value.trim() !== '') {
         const task = txtInput.value;
-        console.log(task)
         const newTodo = new Todo(task);
         todoList.addTodo(newTodo);
         createTodoHtml(newTodo);
@@ -57,7 +55,7 @@ divTodoList.addEventListener('click', (e) => {
 
 btnClearCompleted.addEventListener('click', () => {
     todoList.clearCompleted();
-    for(let i = divTodoList.children.length - 1; i >= 0; i--) {
+    for (let i = divTodoList.children.length - 1; i >= 0; i--) {
 
         const element = divTodoList.children[i];
         if (element.classList.contains('completed')) {
@@ -69,18 +67,17 @@ btnClearCompleted.addEventListener('click', () => {
 
 ulFilters.addEventListener('click', (e) => {
     const filter = e.target.text;
-    if(!filter) {
+    if (!filter) {
         return;
     }
 
-    aFilters.forEach(a => a.classList.remove('selected')); 
+    aFilters.forEach(a => a.classList.remove('selected'));
     e.target.classList.add('selected');
 
-
     for (const element of divTodoList.children) {
-        element.classList.remove('hidden');   
+        element.classList.remove('hidden');
         const completed = element.classList.contains('completed');
-        switch(filter) {
+        switch (filter) {
             case 'Pending':
                 if (completed) {
                     element.classList.add('hidden');
@@ -92,7 +89,6 @@ ulFilters.addEventListener('click', (e) => {
                 }
                 break;
 
-
-                }            
-            }
+        }
+    }
 });
